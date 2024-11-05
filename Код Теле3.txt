@@ -1,0 +1,1541 @@
+<Window x:Class="KuRsOvOy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KuRsOvOy"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/Back.png"/>
+    </Window.Background>
+    <Grid>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Source="Av.xaml" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="100" Grid.RowSpan="100"></Frame>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="24" Background="Black" Panel.ZIndex="-1">
+        </StackPanel>
+        <Image Source="Resources/Tele3.png" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"/>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+    </Grid>
+</Window>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace KuRsOvOy
+{
+    /// <summary>
+    /// Логика взаимодействия для MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            MainFrame.Navigate(new Av());
+            Manager.MainFrame = MainFrame;
+        }
+    }
+}
+<Page x:Class="KuRsOvOy.Av"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KuRsOvOy"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Av">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="Resources/Back2.png" Grid.Column="4" Grid.Row="0" Grid.RowSpan="11" Grid.ColumnSpan="4" Stretch="UniformToFill"></Image>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Введите логин" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="22" Grid.ColumnSpan="2" Margin="0,0.091,90,40.909" Grid.RowSpan="2"></TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="Login" Grid.ColumnSpan="3" Margin="10,0.091,20,40.909" Grid.RowSpan="2" Style="{StaticResource CustomFont}" FontSize="22"></TextBox>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Введите пароль" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="22" Grid.ColumnSpan="2" Margin="0,0.091,90,40.909" Grid.RowSpan="2"></TextBlock>
+        <PasswordBox Grid.Row="4" Grid.Column="1" Name="Password" Grid.ColumnSpan="3" Margin="10,0.091,20,39.909" Grid.RowSpan="2" Style="{StaticResource CustomFont}" FontSize="18"></PasswordBox>
+
+        <Button Grid.Row="11" Grid.Column="0" Content="Авторизоваться" Click="Button_Click_1" Grid.ColumnSpan="2" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+        <Button Grid.Row="11" Grid.Column="2" Content="Зарегистрироваться" Click="Button_Click_2" Grid.ColumnSpan="2" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+    </Grid>
+</Page>
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace KuRsOvOy
+{
+    /// <summary>
+    /// Логика взаимодействия для Av.xaml
+    /// </summary>
+    public partial class Av : Page
+    {
+        public Av()
+        {
+            InitializeComponent();
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var currentUser = App.Context.Polzovatel1110.FirstOrDefault(p => p.login == Login.Text && p.password == Password.Password);
+
+                if (currentUser != null)
+                {
+                    switch (currentUser.RoleP)
+                    {
+                        case 2:
+                            App.CurrentUser = currentUser;
+                            Manager.MainFrame.Navigate(new Admin());
+                            break;
+                        case 1:
+                            App.CurrentUser = currentUser;
+                            Manager.MainFrame.Navigate(new Polzovatel());
+                            break;
+                        default:
+                            MessageBox.Show(":(");
+                            break;
+                    }
+                }
+                else // Если пользователя нет
+                {
+                    MessageBox.Show("Пользователь с такими данными не найден.", "Ошибка",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                Login.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка подключения!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new Reg(null));
+        }
+    }
+}
+<Page x:Class="KuRsOvOy.Reg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KuRsOvOy"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Reg">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="Resources/Back2.png" Grid.Column="6" Grid.ColumnSpan="8" Grid.Row="0" Grid.RowSpan="100" Stretch="UniformToFill"></Image>
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="Регистрация" FontWeight="Bold" Grid.ColumnSpan="3" FontSize="30" Style="{StaticResource CustomFont}" Foreground="White"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Введите логин" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="24" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBox Grid.Row="2" Grid.Column="2" Name="login" Grid.ColumnSpan="4" Margin="0,0,20,10" FontSize="24" Style="{StaticResource CustomFont}"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Введите пароль" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="24" Style="{StaticResource CustomFont}"></TextBlock>
+            <PasswordBox Grid.Row="3" Grid.Column="2" Name="password" Grid.ColumnSpan="4" Margin="0,0,20,10" FontSize="24" Style="{StaticResource CustomFont}"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Введите Имя" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="24" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBox Grid.Row="4" Grid.Column="2" Name="NameP" Grid.ColumnSpan="4" Margin="0,0,20,10" FontSize="24" Style="{StaticResource CustomFont}"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Введите Фамилия" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="24" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBox Grid.Row="5" Grid.Column="2" Name="FirstNameP" Grid.ColumnSpan="4" Margin="0,0,20,10" FontSize="24" Style="{StaticResource CustomFont}"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Введите Номер телефона" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="24" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBox Grid.Row="5" Grid.Column="2" Name="PhoneNumberP" Grid.ColumnSpan="4" Margin="0,40,20,10" Grid.RowSpan="2" FontSize="24" Style="{StaticResource CustomFont}"></TextBox>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Введите Адрес" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="24" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBox Grid.Row="6" Grid.Column="2" Name="AdressP" Grid.ColumnSpan="4" Margin="0,41,20,10" Grid.RowSpan="2" FontSize="24" Style="{StaticResource CustomFont}"></TextBox>
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="Введите Дату рождения" FontWeight="Bold" Grid.ColumnSpan="2" FontSize="24" Style="{StaticResource CustomFont}"></TextBlock>
+            <DatePicker Grid.Row="8" Grid.Column="2" Name="BirthDateP" Grid.ColumnSpan="4" Margin="0,0,20,41" Grid.RowSpan="2" FontSize="24" Style="{StaticResource CustomFont}"></DatePicker>
+
+            <Button Grid.Row="11" Grid.Column="0" Content="Назад" Click="Button_Click_1" Grid.ColumnSpan="3" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+            <Button Grid.Row="11" Grid.Column="3" Content="Зарегистрироваться" Click="Button_Click_2" Grid.ColumnSpan="3" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+        </Grid>
+    </Grid>
+</Page>
+using System;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace KuRsOvOy
+{
+    /// <summary>
+    /// Логика взаимодействия для Reg.xaml
+    /// </summary>
+    public partial class Reg : Page
+    {
+        private Polzovatel1110 _currentUser = null;
+
+        public Reg(Polzovatel1110 user)
+        {
+            InitializeComponent();
+            _currentUser = user;
+            if (_currentUser != null)
+            {
+                login.Text = _currentUser.login;
+                password.Password = _currentUser.password;
+                NameP.Text = _currentUser.NameP;
+                FirstNameP.Text = _currentUser.FirstNameP;
+                PhoneNumberP.Text = _currentUser.PhoneNumberP.ToString();
+                AdressP.Text = _currentUser.AdressP;
+                BirthDateP.SelectedDate = _currentUser.BirthDateP;
+            }
+            DataContext = this;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (_currentUser == null)
+            {
+                try
+                {
+                    // Дополнительные проверки
+                    string loginInput = login.Text;
+                    string passwordInput = password.Password;
+
+                    if (string.IsNullOrEmpty(loginInput) ||
+                        App.Context.Polzovatel1110.Any(u => u.login == loginInput))
+                    {
+                        MessageBox.Show("Этот логин уже занят. Пожалуйста, выберите другой.");
+                        return;
+                    }
+
+                    if (passwordInput.Length < 6 || passwordInput.Length > 32)
+                    {
+                        MessageBox.Show("Пароль должен быть от 6 до 32 символов.");
+                        return;
+                    }
+
+                    var user = new Polzovatel1110
+                    {
+                        login = loginInput,
+                        password = passwordInput,
+                        NameP = NameP.Text,
+                        FirstNameP = FirstNameP.Text,
+                        PhoneNumberP = int.Parse(PhoneNumberP.Text),
+                        AdressP = AdressP.Text,
+                        BirthDateP = BirthDateP.SelectedDate,
+                        RoleP = 1,
+                        SummaP = 10000
+                    };
+
+                    App.Context.Polzovatel1110.Add(user);
+                    App.Context.SaveChanges();
+                    MessageBox.Show("Вы зарегистрированы");
+                }
+                catch (FormatException fe)
+                {
+                    MessageBox.Show("Ошибка ввода данных: " + fe.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Произошла ошибка: " + ex.Message);
+                }
+            }
+            else
+            {
+                // Обновление существующего пользователя
+                _currentUser.login = login.Text;
+                _currentUser.password = password.Password;
+                _currentUser.NameP = NameP.Text;
+                _currentUser.FirstNameP = FirstNameP.Text;
+                _currentUser.PhoneNumberP = int.Parse(PhoneNumberP.Text);
+                _currentUser.AdressP = AdressP.Text;
+                _currentUser.BirthDateP = BirthDateP.SelectedDate;
+
+                App.Context.SaveChanges();
+                MessageBox.Show("Запись сохранена");
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+    }
+}
+<Page x:Class="KuRsOvOy.Admin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KuRsOvOy"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Admin">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="4" Text="Панель администратора" FontWeight="Bold" Grid.ColumnSpan="8" FontSize="35" TextAlignment="Center" Style="{StaticResource CustomFont}" Foreground="White"/>
+        <Image Source="Resources/Back2.png" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="100" Stretch="UniformToFill"></Image>
+        <Image Source="Resources/Back2.png" Grid.Column="12" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="100" Stretch="UniformToFill">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="+1"/>
+            </Image.RenderTransform>
+        </Image>
+        <Button Grid.Column="5" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="2" Content="Список Тарифов" Click="Button_Click" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="26"></Button>
+        <Button Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="6" Grid.RowSpan="2" Content="Список Пользователей" Click="Button_Click_1" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="26"></Button>
+        <Button Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="6" Grid.RowSpan="2" Content="Назад" Click="Button_Click_2" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+    </Grid>
+</Page>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace KuRsOvOy
+{
+    /// <summary>
+    /// Логика взаимодействия для Admin.xaml
+    /// </summary>
+    public partial class Admin : Page
+    {
+        public Admin()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new TarifAd());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new ListPol());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+    }
+}
+<Page x:Class="KuRsOvOy.TarifAd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KuRsOvOy"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TarifAd">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="22" Name="LViewTarif" Grid.RowSpan="7" ItemsSource="{Binding Tarif1110}" BorderThickness="4" BorderBrush="Black">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="auto">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                                <TextBlock Text="{Binding NameT}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 0 5 0" FontSize="20" Style="{StaticResource CustomFont}"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Ежемесячный платеж:" FontSize="14" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding EzhCostT}" FontSize="14" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Количество минут:" FontSize="14" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding MinT}" FontSize="14" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Количество Гб:" FontSize="14" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding GbT}" FontSize="14" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Количество СМС:" FontSize="14" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding SmsT}" FontSize="14" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Дополнительная услуга:" FontSize="14" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding Dop1110.NameD}" FontSize="14" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                        <Button HorizontalAlignment="Right" Content="Изменить Тариф" Click="Red_Click" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock Text="Тарифы" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="9" FontSize="30" Style="{StaticResource CustomFont}" Foreground="White" FontWeight="Bold"></TextBlock>
+        <TextBlock Text="Поиск:" Grid.Column="10"  Grid.Row="0" HorizontalAlignment="left" FontSize="26" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="White" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox HorizontalAlignment="Left" Grid.Column="12"  Grid.Row="0" Width="300" FontSize="26" Height="25" Name="search" TextChanged="search_TextChanged" Grid.ColumnSpan="10" Style="{StaticResource CustomFont}"></TextBox>
+        <Button Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" HorizontalAlignment="Left" Content="Добавить Тариф" Name="BtnDob" Click="Dob" Width="170" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+        <Button Grid.Row="10" Grid.Column="18" Grid.ColumnSpan="5" HorizontalAlignment="Left" Content="Удалить Тариф" Name="BtnUdl" Click="Udl" Width="170" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+        <Button Grid.Row="10" Grid.Column="9" Content="Назад" Click="Button_Click_1" Grid.ColumnSpan="6" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+    </Grid>
+</Page>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace KuRsOvOy
+{
+    /// <summary>
+    /// Interaction logic for TarifAd.xaml
+    /// </summary>
+    public partial class TarifAd : Page
+    {
+        public TarifAd()
+        {
+            InitializeComponent();
+            var tarif = user267_dbEntities.GetContext().Tarif1110.ToList();
+            LViewTarif.ItemsSource = tarif;
+            DataContext = this;
+            UpdateD();
+        }
+
+        private void Dob(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new TarifDob(null));
+        }
+        private void Red_Click(object sender, RoutedEventArgs e)
+        {
+            var tarif = (sender as Button).DataContext as Tarif1110;
+            Manager.MainFrame.Navigate(new TarifDob(tarif));
+        }
+        private void search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateD();
+        }
+        private void UpdateD()
+        {
+            var product = App.Context.Tarif1110.ToList();
+            product = product.Where(p => p.NameT.ToLower().Contains(search.Text.ToLower())).ToList();
+            LViewTarif.ItemsSource = product;
+        }
+
+        private void Udl(object sender, RoutedEventArgs e)
+        {
+            var hotelsForRemoving = LViewTarif.SelectedItems.Cast<Tarif1110>().ToList();
+            if (MessageBox.Show($"Удали {hotelsForRemoving.Count()} элементов?", "Внимание",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                   App.Context.Tarif1110.RemoveRange(hotelsForRemoving);
+                    App.Context.SaveChanges();
+                    MessageBox.Show("Данные УНИЧТОЖЕНЫ, УХАХАХХАХАХХАХАХАХ");
+
+                    LViewTarif.ItemsSource = App.Context.Tarif1110.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+    }
+}
+<Page x:Class="KuRsOvOy.TarifDob"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KuRsOvOy"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TarifDob">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="Resources/Back2.png" Grid.Column="16" Grid.ColumnSpan="8" Grid.Row="0" Grid.RowSpan="100" Stretch="UniformToFill"></Image>
+        <TextBlock Text="Добавление Тарифа" Grid.ColumnSpan="9" Grid.Column="5" FontWeight="Bold"  FontSize="30" Style="{StaticResource CustomFont}" Foreground="White"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="1" Text="Название" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="6" Grid.ColumnSpan="9" Grid.Row="1"  Name="NameT" TextWrapping="Wrap" FontSize="25" Margin="33,0,10,0" Style="{StaticResource CustomFont}"></TextBox>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="2" Text="Ежемесечный плтеж" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="6" Grid.ColumnSpan="9"  Grid.Row="2" Name="EzhCostT" TextWrapping="Wrap" FontSize="25" Margin="33,0,10,0" Style="{StaticResource CustomFont}"></TextBox>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="3" Text="Количество минут" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="6" Grid.ColumnSpan="9"  Grid.Row="3" Name="MinT" TextWrapping="Wrap" FontSize="25" Margin="33,0,10,0" Style="{StaticResource CustomFont}"></TextBox>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="4" Text="Количество Гб" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="6" Grid.ColumnSpan="9"  Grid.Row="4" Name="GbT" TextWrapping="Wrap" FontSize="25" Margin="33,0,10,0" Style="{StaticResource CustomFont}"></TextBox>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="5" Text="Количество СМС" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="6" Grid.ColumnSpan="9"  Grid.Row="5" Name="SmsT" TextWrapping="Wrap" FontSize="25" Margin="33,0,10,0" Style="{StaticResource CustomFont}"></TextBox>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="6" Text="Дополнительная услуга" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <ComboBox ItemsSource="{Binding NameD}" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="9"  Name="ComboDop" DisplayMemberPath="NameD" SelectedValuePath="NameD" Margin="33,0,10,0"></ComboBox>
+        <Button Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="8" Content="Назад" Click="Back" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"/>
+        <Button Grid.Column="8" Grid.Row="9" Grid.ColumnSpan="8" Content="Добавить" Click="Doba" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"/>
+    </Grid>
+</Page>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace KuRsOvOy
+{
+    /// <summary>
+    /// Interaction logic for TarifDob.xaml
+    /// </summary>
+    public partial class TarifDob : Page
+    {
+        private Tarif1110 _currentTarif = null;
+        public TarifDob(Tarif1110 product)
+        {
+            InitializeComponent();
+            _currentTarif = product;
+            if (_currentTarif != null)
+            {
+                var caID = _currentTarif.DopT;
+
+                var cata = App.Context.Dop1110.Where(p => p.Id_Dop == caID).FirstOrDefault().NameD;
+                ComboDop.SelectedValue = cata;
+
+
+                NameT.Text = _currentTarif.NameT;
+                EzhCostT.Text = _currentTarif.EzhCostT.ToString();
+
+                MinT.Text = _currentTarif.MinT.ToString();
+                GbT.Text = _currentTarif.GbT.ToString();
+                SmsT.Text = _currentTarif.SmsT.ToString();
+            }
+            DataContext = this;
+        }
+        public List<Dop1110> NameD { get; set; } = App.Context.Dop1110.ToList();
+
+        private void Doba(object sender, RoutedEventArgs e)
+        {
+            if (_currentTarif == null)
+            {
+                try
+                {
+
+                    var st = App.Context.Dop1110.ToList();
+
+                    var st1 = ComboDop.SelectedItem as Dop1110;
+
+                    var stnaz = $"{st1.NameD}";
+
+                    var stid = st.Where(x => x.NameD == stnaz).FirstOrDefault().Id_Dop;
+
+                    var tarif = new Tarif1110
+                    {
+                        NameT = NameT.Text,
+                        EzhCostT = int.Parse(EzhCostT.Text),
+
+                        DopT = stid,
+
+
+                        MinT = int.Parse(MinT.Text),
+                        GbT = int.Parse(GbT.Text),
+                        SmsT = int.Parse(SmsT.Text),
+                    };
+                    App.Context.Tarif1110.Add(tarif);
+                    App.Context.SaveChanges();
+                    MessageBox.Show("Запись сохранена");
+                }
+                catch
+                {
+                    MessageBox.Show("НЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕТ:(");
+                }
+            }
+            if (_currentTarif != null)
+            {
+                var st = App.Context.Dop1110.ToList();
+
+                var st1 = ComboDop.SelectedItem as Dop1110;
+
+                var stnaz = $"{st1.NameD}";
+
+                var stid = st.Where(x => x.NameD == stnaz).FirstOrDefault().Id_Dop;
+
+                _currentTarif.NameT = NameT.Text;
+                _currentTarif.EzhCostT = int.Parse(EzhCostT.Text);
+
+                _currentTarif.DopT = stid;
+
+                _currentTarif.MinT = int.Parse(MinT.Text);
+
+                _currentTarif.GbT = int.Parse(GbT.Text);
+                _currentTarif.SmsT = int.Parse(SmsT.Text);
+
+                user267_dbEntities.GetContext().SaveChanges();
+                //App.Context.SaveChanges();
+                MessageBox.Show("Запись сохранена");
+            }
+        }
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+    }
+}
+<Page x:Class="KuRsOvOy.ListPol"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KuRsOvOy"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListPol">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="22" Name="LViewPol" Grid.RowSpan="7" ItemsSource="{Binding Polzovatel1110}" BorderThickness="4" BorderBrush="Black">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="auto">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                                <TextBlock Text="{Binding NameP}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 0 5 0" FontSize="27" Style="{StaticResource CustomFont}"></TextBlock>
+                                <TextBlock Text="{Binding FirstNameP}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 0 5 0" FontSize="27" Style="{StaticResource CustomFont}"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Номер телефона:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding PhoneNumberP}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Адрес проживания:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding AdressP}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Дата рождения:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding BirthDateP}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Тариф:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding Tarif1110.NameT}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Роль:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding Role1110.NameR}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Баланс:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding SummaP}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock Text="Список Пользователей" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="9" FontWeight="Bold" Foreground="White" FontSize="30" Style="{StaticResource CustomFont}"></TextBlock>
+        <Button Grid.Row="9" Grid.Column="18" Grid.ColumnSpan="5" HorizontalAlignment="Left" Content="Добавить Сотрудника" Name="BtnDob" Click="Dob" Width="170" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+        <Button Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="6" Content="Назад" Click="Button_Click_2" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+    </Grid>
+</Page>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace KuRsOvOy
+{
+    /// <summary>
+    /// Логика взаимодействия для ListPol.xaml
+    /// </summary>
+    public partial class ListPol : Page
+    {
+        public ListPol()
+        {
+            InitializeComponent();
+            var pol = user267_dbEntities.GetContext().Polzovatel1110.ToList();
+            LViewPol.ItemsSource = pol;
+            DataContext = this;
+        }
+
+        private void Dob(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new SotrDob(null));
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+    }
+}
+<Page x:Class="KuRsOvOy.SotrDob"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KuRsOvOy"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SotrDob">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="Resources/Back2.png" Grid.Column="16" Grid.ColumnSpan="8" Grid.Row="0" Grid.RowSpan="100" Stretch="UniformToFill"></Image>
+        <TextBlock Text="Добавление Сотрудника" FontWeight="Bold"  Grid.Column="5" Grid.ColumnSpan="7"  Style="{StaticResource CustomFont}" Foreground="White" FontSize="20"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="1" Text="Имя" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="7" Grid.ColumnSpan="8" Grid.Row="1"  Name="NameP" TextWrapping="Wrap" FontSize="25" Style="{StaticResource CustomFont}"></TextBox>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="2" Text="Фамилия" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="7" Grid.ColumnSpan="8"  Grid.Row="2" Name="FirstNameP" TextWrapping="Wrap" FontSize="25" Style="{StaticResource CustomFont}"></TextBox>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="3" Text="Номер телефона" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="7" Grid.ColumnSpan="8"  Grid.Row="3" Name="PhoneNumberP" TextWrapping="Wrap" FontSize="25" Style="{StaticResource CustomFont}"></TextBox>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="4" Text="Адрес проживания" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="7" Grid.ColumnSpan="8"  Grid.Row="4" Name="AdressP" TextWrapping="Wrap" FontSize="25" Style="{StaticResource CustomFont}"></TextBox>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="5" Text="Дата рождения" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <DatePicker Grid.Column="7" Grid.ColumnSpan="8"  Grid.Row="5" Name="BirthDateP" FontSize="25" Style="{StaticResource CustomFont}"></DatePicker>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="6" Text="Логин" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="7" Grid.ColumnSpan="8"  Grid.Row="6" Name="login" TextWrapping="Wrap" FontSize="25" Style="{StaticResource CustomFont}"></TextBox>
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="7" Text="Пароль" FontSize="25" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox Grid.Column="7" Grid.ColumnSpan="8"  Grid.Row="7" Name="password" TextWrapping="Wrap" FontSize="25" Style="{StaticResource CustomFont}"></TextBox>
+
+        <Button Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="8" Content="Назад" Click="Back" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"/>
+        <Button Grid.Column="8" Grid.Row="10" Grid.ColumnSpan="8" Content="Добавить" Click="Doba" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"/>
+    </Grid>
+</Page>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace KuRsOvOy
+{
+    /// <summary>
+    /// Логика взаимодействия для SotrDob.xaml
+    /// </summary>
+    public partial class SotrDob : Page
+    {
+        private Polzovatel1110 _currentPol = null;
+        public SotrDob(Polzovatel1110 product)
+        {
+            InitializeComponent();
+            _currentPol = product;
+            if (_currentPol != null)
+            {
+                NameP.Text = _currentPol.NameP;
+                PhoneNumberP.Text = _currentPol.PhoneNumberP.ToString();
+                FirstNameP.Text = _currentPol.FirstNameP;
+                AdressP.Text = _currentPol.AdressP;
+                BirthDateP.SelectedDate = _currentPol.BirthDateP; ;
+                login.Text = _currentPol.login;
+                password.Text = _currentPol.password;
+
+            }
+            DataContext = this;
+        }
+
+        private void Doba(object sender, RoutedEventArgs e)
+        {
+            if (_currentPol == null)
+            {
+                try
+                {
+
+                    var tarif = new Polzovatel1110
+                    {
+                        NameP = NameP.Text,
+                        PhoneNumberP = int.Parse(PhoneNumberP.Text),
+                        FirstNameP = FirstNameP.Text,
+                        AdressP = AdressP.Text,
+                        BirthDateP = BirthDateP.SelectedDate.Value,
+                        login = login.Text,
+                        password = password.Text,
+                        RoleP = 2
+                    };
+                    App.Context.Polzovatel1110.Add(tarif);
+                    App.Context.SaveChanges();
+                    MessageBox.Show("Запись сохранена");
+                }
+                catch
+                {
+                    MessageBox.Show("НЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕТ:(");
+                }
+            }
+            else
+            {
+
+                _currentPol.NameP = NameP.Text;
+                _currentPol.PhoneNumberP = int.Parse(PhoneNumberP.Text);
+                _currentPol.FirstNameP = FirstNameP.Text;
+                _currentPol.AdressP = AdressP.Text;
+                _currentPol.BirthDateP = BirthDateP.SelectedDate;
+                _currentPol.login = login.Text;
+                _currentPol.password = password.Text;
+
+                App.Context.SaveChanges();
+                MessageBox.Show("Запись сохранена");
+            }
+        }
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+    }
+}
+<Page x:Class="KuRsOvOy.Polzovatel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KuRsOvOy"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Polzovatel">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="22" Name="LViewTarif" Grid.RowSpan="9" ItemsSource="{Binding Tarif1110}" BorderThickness="4" BorderBrush="Black">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="auto">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical" Grid.Row="0">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                                <TextBlock Text="{Binding NameT}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 0 5 0" FontSize="28" FontWeight="Bold" Style="{StaticResource CustomFont}"></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Ежемесячный платеж:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding EzhCostT}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Количество минут:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding MinT}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Количество Гб:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding GbT}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Количество СМС:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding SmsT}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Дополнительная услуга:" FontSize="20" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                    <TextBlock Text="{Binding Dop1110.NameD}" FontSize="20" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                        <Button HorizontalAlignment="Left" Content="Добавить Тариф" Click="Red_Click" Grid.Column="0" Height="40" Grid.Row="2" Width="200" FontSize="30" Style="{StaticResource CustomFont}" Background="Black" Foreground="White" BorderBrush="White"></Button>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock Text="Тарифы" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="9" FontSize="30" Style="{StaticResource CustomFont}" Foreground="White" FontWeight="Bold"></TextBlock>
+        <TextBlock Text="Поиск:" Grid.Column="10"  Grid.Row="0" HorizontalAlignment="left" FontSize="26" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="White" Style="{StaticResource CustomFont}"></TextBlock>
+        <TextBox HorizontalAlignment="Left" Grid.Column="12"  Grid.Row="0" Width="300" FontSize="26" Height="25" Name="search" TextChanged="search_TextChanged" Grid.ColumnSpan="10" Style="{StaticResource CustomFont}"></TextBox>
+        <Button Grid.Column="22" Click="Vhod" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19">
+            <Image Source="Resources/logo.png" Grid.Column="4" Grid.Row="0" Grid.RowSpan="11" Grid.ColumnSpan="4" Stretch="UniformToFill"></Image>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="6" Content="Назад" Click="Button_Click_2" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+    </Grid>
+</Page>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace KuRsOvOy
+{
+    /// <summary>
+    /// Логика взаимодействия для Polzovatel.xaml
+    /// </summary>
+    public partial class Polzovatel : Page
+    {
+        public Polzovatel()
+        {
+            InitializeComponent();
+            var tarif = user267_dbEntities.GetContext().Tarif1110.ToList();
+            LViewTarif.ItemsSource = tarif;
+            DataContext = this;
+            UpdateD();
+        }
+        private void Red_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedTarif = LViewTarif.SelectedItem as Tarif1110;
+            if (selectedTarif != null)
+            {
+                // Получаем текущего пользователя
+                var currentUser = App.CurrentUser; // Используем App.CurrentUser напрямую
+
+                if (currentUser != null)
+                {
+                    // Сохраняем стоимость выбранного тарифа
+                    decimal cost = selectedTarif.EzhCostT.HasValue ? (decimal)selectedTarif.EzhCostT.Value : 0m;
+
+                    // Проверяем, достаточно ли средств
+                    if (currentUser.SummaP >= cost)
+                    {
+                        // Уменьшаем сумму пользователя
+                        currentUser.SummaP -= cost; // Уменьшаем на стоимость тарифа
+
+                        // Обновляем тариф пользователя
+                        currentUser.TarifP = selectedTarif.Id_Tarif; // используем Id_Tarif для обновления
+
+                        // Сохраняем изменения в базе данных
+                        try
+                        {
+                            App.Context.SaveChanges();
+                            MessageBox.Show("Тариф успешно изменён на выбранный тариф, стоимость учтена в сумме!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Ошибка при изменении тарифа: " + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Недостаточно средств для смены тарифа.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Текущий пользователь не найден.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, выберите тариф для изменения.", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+        private void search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateD();
+        }
+        private void UpdateD()
+        {
+            var product = App.Context.Tarif1110.ToList();
+            product = product.Where(p => p.NameT.ToLower().Contains(search.Text.ToLower())).ToList();
+            LViewTarif.ItemsSource = product;
+        }
+
+        private void Udl(object sender, RoutedEventArgs e)
+        {
+            var hotelsForRemoving = LViewTarif.SelectedItems.Cast<Tarif1110>().ToList();
+            if (MessageBox.Show($"Удали {hotelsForRemoving.Count()} элементов?", "Внимание",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    App.Context.Tarif1110.RemoveRange(hotelsForRemoving);
+                    App.Context.SaveChanges();
+                    MessageBox.Show("Данные УНИЧТОЖЕНЫ, УХАХАХХАХАХХАХАХАХ");
+
+                    LViewTarif.ItemsSource = App.Context.Tarif1110.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void Vhod(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new Cabinet());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+    }
+}
+<Page x:Class="KuRsOvOy.Cabinet"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KuRsOvOy"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Cabinet">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="15" Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+            <TextBlock x:Name="NameP" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 0 5 0" FontSize="30" FontStyle="Italic" FontWeight="Bold" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="FirstNameP" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 0 5 0" FontSize="30" FontStyle="Italic" FontWeight="Bold" Style="{StaticResource CustomFont}"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="15">
+            <TextBlock Text="Номер телефона:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="PhoneNumberP" FontSize="24" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="15">
+            <TextBlock Text="Адрес проживания:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="AdressP" FontSize="24" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="15">
+            <TextBlock Text="Дата рождения:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="BirthDateP" FontSize="24" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="15">
+            <TextBlock Text="Тариф:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="NameT" FontSize="24" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="15">
+            <TextBlock Text="Баланс:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="SummaP" FontSize="24" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="15" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="6">
+            <StackPanel Grid.Column="15" Grid.Row="1" Grid.ColumnSpan="15" Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                <TextBlock Text="Ваш тариф:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="NameTT" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 0 5 0" FontSize="30" FontStyle="Italic" FontWeight="Bold" Style="{StaticResource CustomFont}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="15" Grid.Row="2" Grid.ColumnSpan="15">
+            <TextBlock Text="Ежемесечная стоимость:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="EzhCostT" FontSize="24" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="15" Grid.Row="3" Grid.ColumnSpan="15">
+            <TextBlock Text="Количество минут:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="MinT" FontSize="24" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="15" Grid.Row="4" Grid.ColumnSpan="15">
+            <TextBlock Text="Количество Гб:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="GbT" FontSize="24" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="15" Grid.Row="5" Grid.ColumnSpan="15">
+            <TextBlock Text="Количество СМС:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="SmsT" FontSize="24" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="15" Grid.Row="6" Grid.ColumnSpan="15">
+            <TextBlock Text="Дополнительная услуга:" FontSize="24" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+            <TextBlock x:Name="DopT" FontSize="24" FontStyle="Italic" HorizontalAlignment="Left" Margin="0 5 5 0" Style="{StaticResource CustomFont}"></TextBlock>
+        </StackPanel>
+        </StackPanel>
+        <Button Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="6" Content="Назад" Click="Button_Click_2" Background="Black" Foreground="White" BorderBrush="White" FontWeight="Bold" Style="{StaticResource CustomFont}" FontSize="19"></Button>
+    </Grid>
+</Page>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace KuRsOvOy
+{
+    /// <summary>
+    /// Логика взаимодействия для Cabinet.xaml
+    /// </summary>
+    public partial class Cabinet : Page
+    {
+        public Cabinet()
+        {
+            InitializeComponent();
+            var currentUser = App.CurrentUser;
+            if (currentUser != null)
+            {
+                NameP.Text = App.CurrentUser.NameP;
+                FirstNameP.Text = App.CurrentUser.FirstNameP;
+                PhoneNumberP.Text = App.CurrentUser.PhoneNumberP.ToString();
+                AdressP.Text = App.CurrentUser.AdressP;
+                BirthDateP.Text = App.CurrentUser.BirthDateP.ToString();
+                SummaP.Text = App.CurrentUser.SummaP.ToString();
+                NameT.Text = App.CurrentUser.Tarif1110.NameT;
+            }
+            if (currentUser.Tarif1110 != null)
+            {
+                NameTT.Text = App.CurrentUser.Tarif1110.NameT;
+                EzhCostT.Text = App.CurrentUser.Tarif1110.EzhCostT.ToString();
+                MinT.Text = App.CurrentUser.Tarif1110.MinT.ToString();
+                GbT.Text = App.CurrentUser.Tarif1110.GbT.ToString();
+                SmsT.Text = App.CurrentUser.Tarif1110.SmsT.ToString();
+                DopT.Text = App.CurrentUser.Tarif1110.DopT.ToString();
+                if (DopT.Text == "1")
+                {
+                    DopT.Text = "Яндекс+";
+                }
+                if (DopT.Text == "2")
+                {
+                    DopT.Text = "Иви";
+                }
+                if (DopT.Text == "3")
+                {
+                    DopT.Text = "Бобёр";
+                }
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
